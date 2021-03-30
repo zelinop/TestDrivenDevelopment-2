@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package za.ac.cput.testdrivendevelopment;
 
 import org.junit.jupiter.api.AfterEach;
@@ -11,10 +7,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.*;
+        
 /**
  *
- * @author Zaeem Petersen - 219010145
+ * @author 
  */
 public class appTest {
     
@@ -36,10 +33,48 @@ public class appTest {
     @AfterEach
     public void tearDown() {
     }
-
+    //Test for Equality
     @Test
-    public void testSomeMethod() {
-
-    }
+    public void testAbc1 () {
+    AddTwoNumbers atn = new AddTwoNumbers (){};
     
+    assertEquals(10, atn.abc(5, 5));
+    
+    }
+    //Test Identity
+    @Test
+    public void testAbc2 (){
+   
+        AddTwoNumbers atn = new AddTwoNumbers (){};
+        
+        assertSame(10, atn.abc(5, 5));
+    }
+        
+    //Failing test
+    @Test
+    public void testAbc3 () {
+    AddTwoNumbers atn = new AddTwoNumbers (){};
+    
+    assertEquals(10, atn.abc(5, 4));
+    
+    }
+    //Timeout test for 5 seconds
+    @Timeout (5)
+    @Test
+    public void testAbc4 () {
+    AddTwoNumbers atn = new AddTwoNumbers (){};
+    
+    assertEquals(10, atn.abc(5, 5));
+    
+    }
+ 
+    //Disabling the test
+    @Disabled
+    @Test
+    public void testAbc5 () {
+    AddTwoNumbers atn = new AddTwoNumbers (){};
+    
+    assertEquals(10, atn.abc(5, 5));
+    
+    }
 }

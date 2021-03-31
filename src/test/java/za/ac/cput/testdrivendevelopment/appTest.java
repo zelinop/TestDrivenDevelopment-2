@@ -35,7 +35,7 @@ public class appTest {
     }
     //Test for Equality
     @Test
-    public void testAbc1 () {
+    public void testEquality () {
     AddTwoNumbers atn = new AddTwoNumbers (){};
     
     assertEquals(10, atn.abc(5, 5));
@@ -43,7 +43,7 @@ public class appTest {
     }
     //Test Identity
     @Test
-    public void testAbc2 (){
+    public void testIdentity (){
    
         AddTwoNumbers atn = new AddTwoNumbers (){};
         
@@ -52,7 +52,7 @@ public class appTest {
         
     //Failing test
     @Test
-    public void testAbc3 () {
+    public void testFailing () {
     AddTwoNumbers atn = new AddTwoNumbers (){};
     
     assertEquals(10, atn.abc(5, 4));
@@ -61,7 +61,7 @@ public class appTest {
     //Timeout test for 5 seconds
     @Timeout (5)
     @Test
-    public void testAbc4 () {
+    public void testTimeout () {
     AddTwoNumbers atn = new AddTwoNumbers (){};
     
     assertEquals(10, atn.abc(5, 5));
@@ -71,7 +71,7 @@ public class appTest {
     //Disabling the test
     @Disabled
     @Test
-    public void testAbc5 () {
+    public void testDisabled () {
     AddTwoNumbers atn = new AddTwoNumbers (){};
     
     assertEquals(10, atn.abc(5, 5));
